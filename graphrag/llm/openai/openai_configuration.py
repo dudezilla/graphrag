@@ -136,7 +136,8 @@ class OpenAIConfiguration(Hashable, LLMConfig):
     @property
     def model(self) -> str:
         """Model property definition."""
-        return self._model
+        #return self._model
+        return "llama3.1"
 
     @property
     def deployment_name(self) -> str | None:
@@ -148,7 +149,8 @@ class OpenAIConfiguration(Hashable, LLMConfig):
         """API base property definition."""
         result = _non_blank(self._api_base)
         # Remove trailing slash
-        return result[:-1] if result and result.endswith("/") else result
+        #return result[:-1] if result and result.endswith("/") else result
+        return 'http://localhost:11434/v1'
 
     @property
     def api_version(self) -> str | None:
